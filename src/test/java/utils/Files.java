@@ -1,19 +1,10 @@
 package utils;
 
-import com.codeborne.pdftest.PDF;
-import com.codeborne.xlstest.XLS;
 import org.apache.commons.io.FileUtils;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.Iterator;
 
 
 public class Files {
@@ -37,8 +28,5 @@ public class Files {
         return new File(path);
 
 
-        public static XLS getXls (String path) throws IOException {
-            return new XLS(getFile(path));
-        }
     }
 }

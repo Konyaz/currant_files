@@ -7,15 +7,15 @@ import java.io.IOException;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
-import static utils.Files.readTextFromPath;
+import static utils.Files.readTextFromFilePath;
 
 
 public class TxtFileTest {
     @Test
     void txtTest() throws IOException {
-        String txtFilePath = "./scr/test/resources/files/1.txt";
+        String txtFilePath = "./src/test/resources/files/1.txt";
         String expectedData = "123456789";
-        String actualData = readTextFromPath(txtFilePath);
+        String actualData = readTextFromFilePath(txtFilePath);
 
         assertThat(actualData, containsString(expectedData));
 

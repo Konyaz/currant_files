@@ -12,7 +12,7 @@ public class XlslxTest {
     @Test
     void xlsxTest() {
         String xlsFilePath = "./src/test/resources/files/1.xlsx";
-        String expectedData = "123456789";
+        String expectedData = "abcdefghij";
 
         String actualData = readXlsxFromPath(xlsFilePath);
         assertThat(actualData, containsString(expectedData));

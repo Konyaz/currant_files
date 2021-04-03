@@ -27,7 +27,7 @@ public class Files {
         return fileContent;
     }
 
-    public static String readTextFromFilePath(String path) {
+    public static String readTextFromPath(String path) {
 
         return readTextFromFile(getFile(path));
     }

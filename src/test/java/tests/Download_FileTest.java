@@ -17,6 +17,7 @@ public class Download_FileTest {
 
     @Test
     void selenideDownloadReadmeTest() throws IOException {
+
         Configuration.downloadsFolder = "./downloads";
         String expectedText = "Selenide = UI Testing Framework powered by Selenium WebDriver";
 

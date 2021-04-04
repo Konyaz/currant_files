@@ -34,6 +34,7 @@ public class Files {
         return new PDF(getFile(path));
 
     }
+
     public static String readTextFromDocxPath(String path) {
         String result = "";
         try (FileInputStream fis = new FileInputStream(path);
@@ -48,7 +49,7 @@ public class Files {
         return result;
     }
 
-    public static String readXlsxFromPath(String path){
+    public static String readXlsxFromPath(String path) {
         String result = "";
         XSSFWorkbook myExcelBook = null;
 

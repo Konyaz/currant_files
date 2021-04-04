@@ -28,7 +28,8 @@ public class Files {
     public static String readTextFromPath(String path) throws IOException {
         return readTextFromFile(getFile(path));
     }
-//Pdf
+
+    //Pdf
     public static File getFile(String path) {
         return new File(path);
     }
@@ -37,7 +38,8 @@ public class Files {
         return new PDF(getFile(path));
 
     }
-//Docx
+
+    //Docx
     public static String readTextFromDocxPath(String path) {
         String result = "";
         try (FileInputStream fis = new FileInputStream(path);
@@ -52,7 +54,7 @@ public class Files {
         return result;
     }
 
-//Doc
+    //Doc
     public static String getDoc(String path) throws IOException {
         File file = getFile(path);
         String filePath = file.getPath();
@@ -64,7 +66,8 @@ public class Files {
         result = extractor.getText();
         return result;
     }
-//Xlsx и Xls
+
+    //Xlsx и Xls
     public static String readXlsxFromPath(String path) {
         String result = "";
         XSSFWorkbook myExcelBook = null;

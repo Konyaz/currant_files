@@ -17,7 +17,7 @@ public class ZipTest {
         String unzipFolderPath = "./src/test/resources/files/unzip";
         String zipPassword = "123456789";
         String unzipTxtFilePath = "./src/test/resources/files/unzip/1.txt";
-        String expectedData = "123456789";
+        String expectedData = "abcdefghi";
 
         unzip(zipFilePath, unzipFolderPath, zipPassword);
 

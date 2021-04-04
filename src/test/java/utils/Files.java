@@ -1,6 +1,7 @@
-
 package utils;
 
+import com.codeborne.pdftest.PDF;
+import com.codeborne.xlstest.XLS;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
@@ -16,27 +17,21 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 
-
 public class Files {
-    public static String readTextFromFile(File file) {
-        String fileContent = "";
-        try {
-            fileContent = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return fileContent;
+    public static String readTextFromFile(File file) throws IOException {
+        return FileUtils.readFileToString(file, StandardCharsets.UTF_8);
     }
 
-    public static String readTextFromPath(String path) {
-
+    public static String readTextFromPath(String path) throws IOException {
         return readTextFromFile(getFile(path));
     }
 
     public static File getFile(String path) {
         return new File(path);
+    }
 
+    public static PDF getPdf(String path) throws IOException {
+        return new PDF(getFile(path));
 
     }
     public static String readTextFromDocxPath(String path) {

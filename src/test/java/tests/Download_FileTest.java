@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Test;
 import utils.Files;
 
@@ -24,5 +25,9 @@ public class Download_FileTest {
         String fileContent = Files.readTextFromFile(downloadedFile);
 
         assertThat(fileContent, containsString(expectedText));
+
+        //удаление папки downloads после срабатывания теста
+        FileUtils.deleteDirectory(new File("./downloads"));
+
     }
 }

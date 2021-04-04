@@ -3,6 +3,7 @@ package utils;
 import com.codeborne.pdftest.PDF;
 import com.codeborne.xlstest.XLS;
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.hwpf.extractor.WordExtractor;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
@@ -10,6 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.hwpf.HWPFDocument;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -46,6 +48,19 @@ public class Files {
             e.printStackTrace();
         }
 
+        return result;
+    }
+
+
+    public static String getDoc(String path) throws IOException {
+        File file = getFile(path);
+        String filePath = file.getPath();
+        String result;
+
+        FileInputStream fileInputStream = new FileInputStream(filePath);
+        HWPFDocument docFile = new HWPFDocument(fileInputStream);
+        WordExtractor extractor = new WordExtractor(docFile);
+        result = extractor.getText();
         return result;
     }
 

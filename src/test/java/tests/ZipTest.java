@@ -26,7 +26,7 @@ public class ZipTest {
         assertThat(actualData, containsString(expectedData));
     }
 
-
+    @Test
     void zipTest() throws IOException, ZipException {
         String zipFilePath = "./src/test/resources/files/2.zip";
         String unzipFolderPath = "./src/test/resources/files/unzip";
@@ -39,5 +39,4 @@ public class ZipTest {
 
         assertThat(actualData, containsString(expectedData));
     }
-
 }

@@ -30,6 +30,5 @@ public class Download_FileTest {
 
         //удаление папки downloads после срабатывания теста
         FileUtils.deleteDirectory(new File("./downloads"));
-
     }
 }

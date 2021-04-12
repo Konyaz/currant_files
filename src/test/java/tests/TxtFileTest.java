@@ -18,6 +18,5 @@ public class TxtFileTest {
         String actualData = readTextFromPath(txtFilePath);
 
         assertThat(actualData, containsString(expectedData));
-
     }
 }

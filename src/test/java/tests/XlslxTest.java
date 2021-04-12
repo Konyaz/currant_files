@@ -17,5 +17,4 @@ public class XlslxTest {
         String actualData = readXlsxFromPath(xlsFilePath);
         assertThat(actualData, containsString(expectedData));
     }
-
 }

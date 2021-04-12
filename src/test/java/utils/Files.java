@@ -57,8 +57,8 @@ public class Files {
     //Doc
     public static String getDoc(String path) throws IOException {
         File file = getFile(path);
-        String filePath = file.getPath();
-        String result;
+        String filePath = file.getPath(),
+                result;
 
         FileInputStream fileInputStream = new FileInputStream(filePath);
         HWPFDocument docFile = new HWPFDocument(fileInputStream);

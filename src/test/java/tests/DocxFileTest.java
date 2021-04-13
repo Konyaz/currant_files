@@ -21,4 +21,14 @@ public class DocxFileTest {
         String actualData = readTextFromDocxPath(docxFilePath);
         assertThat(actualData, containsString(expectedData));
     }
+
+
+    @Test
+    void docTest() throws IOException {
+        String docFilePath = "./src/test/resources/files/1.doc";
+        String expectedData = "This is Heading1 Text";
+
+        String actualData = readTextFromDocxPath(docFilePath);
+        assertThat(actualData, containsString(expectedData));
+    }
 }

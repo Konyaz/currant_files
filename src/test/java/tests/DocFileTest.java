@@ -1,3 +1,4 @@
+/*
 package tests;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -20,3 +21,4 @@ public class DocFileTest {
         assertThat(actualData, containsString(expectedData));
     }
 }
+*/

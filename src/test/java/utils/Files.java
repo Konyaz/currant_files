@@ -30,43 +30,32 @@ public class Files {
         return readTextFromFile(getFile(path));
     }
 
-    //Pdf
+
     public static File getFile(String path) {
         return new File(path);
     }
-
+    //Pdf
     public static PDF getPdf(String path) throws IOException {
         return new PDF(getFile(path));
 
     }
 
-    //Docx
-    public static String readTextFromDocxPath(String path) {
-        String result = "";
-        try (FileInputStream fis = new FileInputStream(path);
-             XWPFDocument document = new XWPFDocument(fis);
-             XWPFWordExtractor extractor = new XWPFWordExtractor(document)) {
-
-            result = extractor.getText();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return result;
+    //Doc&Docx
+public static String readTextFromDocxPath(String path) throws IOException {
+    if (path.endsWith("doc")) {
+        FileInputStream fileInputStream = new FileInputStream(getFile(path));
+        HWPFDocument document = new HWPFDocument(fileInputStream);
+        WordExtractor extractor = new WordExtractor(document);
+        return extractor.getText();
+    } else if (path.endsWith("docx")) {
+        FileInputStream fileInputStream = new FileInputStream(getFile(path));
+        XWPFDocument document = new XWPFDocument(fileInputStream);
+        XWPFWordExtractor extractor = new XWPFWordExtractor(document);
+        return extractor.getText();
+    } else {
+        throw new IllegalArgumentException("The specified file is not a Word file");
     }
-
-    //Doc
-    public static String getDoc(String path) throws IOException {
-        File file = getFile(path);
-        String filePath = file.getPath(),
-                result;
-
-        FileInputStream fileInputStream = new FileInputStream(filePath);
-        HWPFDocument docFile = new HWPFDocument(fileInputStream);
-        WordExtractor extractor = new WordExtractor(docFile);
-        result = extractor.getText();
-        return result;
-    }
+}
 
     //Xlsx & Xls
     public static XLS getXls(String path) throws IOException {

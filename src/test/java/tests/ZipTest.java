@@ -29,8 +29,9 @@ public class ZipTest {
     @Test
     void zipTest() throws IOException, ZipException {
         String zipFilePath = "./src/test/resources/files/2.zip";
-        String unzipFolderPath = "./src/test/resources/files/unzip";
-        String unzipTxtFilePath = "./src/test/resources/files/unzip/2.txt";
+       //папка build в gitignore
+        String unzipFolderPath = "build/unzip";
+        String unzipTxtFilePath = "build/unzip/2.txt";
         String expectedData = "987654321";
 
         unzip(zipFilePath, unzipFolderPath);

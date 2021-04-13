@@ -13,6 +13,7 @@ import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.hwpf.HWPFDocument;
 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -68,9 +69,14 @@ public class Files {
     }
 
     //Xlsx & Xls
+    public static XLS getXls(String path) throws IOException {
+        return new XLS(getFile(path));
+    }
+
     public static String readXlsxFromPath(String path) {
         String result = "";
         XSSFWorkbook myExcelBook = null;
+
 
         try {
             myExcelBook = new XSSFWorkbook(new FileInputStream(path));

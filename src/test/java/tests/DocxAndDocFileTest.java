@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.containsString;
 import static utils.Files.readTextFromDocxPath;
 
 
-public class DocxFileTest {
+public class DocxAndDocFileTest {
 
 
     @Test
